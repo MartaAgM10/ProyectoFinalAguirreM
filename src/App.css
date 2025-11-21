@@ -37,7 +37,7 @@
   text-decoration: underline;
 }
 
-/* HOME TARJETAS Y CATÁLOGO */
+/* TARJETAS Y CATÁLOGO */
 .item-list {
   padding: 40px 50px;
   display: grid;
@@ -203,7 +203,7 @@ form button:hover {
 }
 
 /* FOOTER */
-.footer {
+/*.footer {
   margin-top: 60px;
   padding: 30px 20px;
   text-align: center;
@@ -237,4 +237,4 @@ form button:hover {
   font-size: 14px;
   color: #ececec;
   margin-top: 10px;
-}
+}*/

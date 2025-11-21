@@ -12,8 +12,8 @@ function ItemDetailContainer() {
   useEffect(() => {
     const ref = doc(db, "productos", id);
 
-    getDoc(ref).then((snap) => {
-      setItem({ id: snap.id, ...snap.data() });
+    getDoc(ref).then((resp) => {
+      setItem({ id: resp.id, ...resp.data() });
       setLoading(false);
     });
   }, [id]);
@@ -21,7 +21,7 @@ function ItemDetailContainer() {
   if (loading) return <p>Cargando producto...</p>;
   if (!item) return <p>Producto no encontrado</p>;
 
-  return <ItemDetail item={item} />;
+  return <div>{item && <ItemDetail item={item} />}</div>;
 }
 
 export default ItemDetailContainer;

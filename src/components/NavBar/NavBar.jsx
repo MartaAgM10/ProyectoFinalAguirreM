@@ -1,24 +1,21 @@
-import { NavLink } from "react-router-dom";
-import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
+import { FaShoppingCart } from "react-icons/fa";
 
 function NavBar() {
+  const { totalItems } = useCart();
+
   return (
-    <nav className="navbar">
-      <NavLink to="/">Pablo Cerrajero Shop</NavLink>
+    <nav>
+      <Link to="/">Inicio</Link>
+      <Link to="/categoria/cerrajeria">Cerrajería</Link>
+      <Link to="/categoria/candados">Candados</Link>
+      <Link to="/categoria/puertas">Puertas</Link>
 
-      <ul>
-        <li>
-          <NavLink to="/categoria/cerrajeria">Cerrajería</NavLink>
-        </li>
-        <li>
-          <NavLink to="/categoria/candados">Candados</NavLink>
-        </li>
-        <li>
-          <NavLink to="/categoria/puertas">Puertas</NavLink>
-        </li>
-      </ul>
-
-      <CartWidget />
+      <Link to="/cart" className="cart-widget">
+        <FaShoppingCart />
+        <span>{totalItems}</span>
+      </Link>
     </nav>
   );
 }

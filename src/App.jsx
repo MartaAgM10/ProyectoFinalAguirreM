@@ -7,6 +7,8 @@ import Cart from "./components/Cart/Cart";
 import CheckoutForm from "./pages/CheckoutForm";
 import NotFound from "./components/NotFound/NotFound";
 import { CartProvider } from "./context/CartContext";
+import "./index.css";
+import "./App.css";
 
 function App() {
   return (

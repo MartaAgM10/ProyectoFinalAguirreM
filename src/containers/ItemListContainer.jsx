@@ -41,7 +41,7 @@ function ItemListContainer() {
   if (loading) return <p>Cargando productos...</p>;
   if (productos.length === 0) return <p>No hay productos para mostrar.</p>;
 
-  return (
+  /*return (
     <div className="productos">
       {productos.map((p) => (
         <div key={p.id} className="producto">
@@ -58,6 +58,22 @@ function ItemListContainer() {
       ))}
     </div>
   );
-}
+}*/
+  return (
+    <div className="item-list">
+      {productos.map((p) => (
+        <div key={p.id} className="item-card">
+          {p.imagen && <img src={p.imagen} alt={p.nombre} />}
+          <h3>{p.nombre}</h3>
+          <p>{p.descripcion || "Sin descripción"}</p>
+          <p>Precio: ${p.precio}</p>
 
+          <Link to={`/detalle/${p.id}`} className="btn">
+            Ver detalle
+          </Link>
+        </div>
+      ))}
+    </div>
+  );
+}
 export default ItemListContainer;
