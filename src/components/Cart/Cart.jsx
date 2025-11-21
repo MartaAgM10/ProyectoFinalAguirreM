@@ -18,9 +18,7 @@ function Cart() {
       <h3>Total: ${totalPrice()}</h3>
 
       <button onClick={clearCart}>Vaciar carrito</button>
-      <Link to="/checkout" className="btn">
-        Finalizar compra
-      </Link>
+      <Link to="/checkout">Finalizar compra</Link>
     </div>
   );
 }

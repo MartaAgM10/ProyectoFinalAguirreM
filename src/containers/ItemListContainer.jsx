@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { db } from "../firebase/config";
+import { db } from "../services/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
+import ItemList from "../components/ItemList/ItemList";
 
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
@@ -46,7 +47,7 @@ function ItemListContainer() {
         <div key={p.id} className="producto">
           <h3>{p.nombre}</h3>
           <p>{p.descripcion || "Sin descripción"}</p>
-          <p>Categoría: {p["categoría"]}</p>
+          <p>Categoría: {p.categoría}</p>
 
           <p>Precio: ${p.precio}</p>
           <p>Stock: {p.existencias}</p>

@@ -1,113 +1,166 @@
 # Pablo Cerrajero Shop - Proyecto final React + Firebase
 
+# Proyecto E-commerce Cerrajería
+
 Este proyecto es una Single Page Application (SPA) desarrollada con ** React**, que funciona como un **e-commerce de servicios y productos de cerrajería**
 Permite navegar un catálogo, ver detalles, agregar al carrito, finalizar la compra y guardar órdenes en **Firestore**
 
-# Tecnologias utilizadas
+Este README describe el funcionamiento, instalación y despliegue del proyecto desarrollado con React + Firebase.
 
-- React JS
-- React Router DOM
-- Firebase / Firestore
-- Context API
-- CSS / SCSS
-- Vite
+## 🚀 Tecnologías utilizadas
 
-# Estructura del proyecto
+- **React + Vite**
+- **React Router DOM**
+- **Firebase Firestore**
+- **Context API** para el carrito
+- **CSS modularizado** (index.css / App.css)
 
+---
+
+## 📦 Instalación
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/MartaAgM10/ProyectoFinalAguirreM.git
+```
+
+2. Entrar al proyecto:
+
+```bash
+cd -repoMartaAgM10
+ProyectoFinalAguirreM
+```
+
+3. Instalar dependencias:
+
+```bash
+npm install
+```
+
+4. Iniciar el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🔥 Configuración de Firebase
+
+Crear un archivo en:
+
+```
+src/services/firebase.js
+```
+
+Agregar tu configuración:
+
+```javascript
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "TU_API_KEY",
+  authDomain: "TU_AUTH_DOMAIN",
+  projectId: "TU_PROJECT_ID",
+  storageBucket: "TU_BUCKET",
+  messagingSenderId: "TU_SENDER_ID",
+  appId: "TU_APP_ID",
+};
+
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+```
+
+---
+
+## 🛒 Funcionalidades del proyecto según la consigna
+
+- Listado de productos desde Firestore
+- Filtro por categoría
+- Detalle de producto
+- Agregar al carrito
+- Carrito persistente mientras se navega
+- Eliminación de productos
+- Checkout con generación de orden en Firestore
+
+---
+
+## 📁 Estructura del proyecto
+
+```
 src/
-├── components/
-│ ├── NavBar/
-│ ├── ItemListContainer/
-│ ├── ItemDetailContainer/
-│ ├── Cart/
-│ └── Checkout/
-├── context/
-├── firebase/
-├── data/
-├── App.jsx
-├── main.jsx
-└── index.css
-
-# Instalación
-
-1. Clonar el repositorio
-   git clone(https://github.com/MartaAgM10/ProyectoFinalAguirreM.git)
-2. Instalar dependencias:
-   `npm install`
-3. Crear `.env.local`con variables de Fiberase
-   VITE_FIREBASE_API_KEY=
-   VITE_FIREBASE_AUTH_DOMAIN=
-   VITE_FIREBASE_PROJECT_ID=
-   VITE_FIREBASE_STORAGE_BUCKET=
-   VITE_FIREBASE_SENDER_ID=
-   VITE_FIREBASE_APP_ID=
-4. Ejecutar modo desarrollo:
-   `npm run dev`
-
-# Fiberbase
-
-### Coleccion: `productos`
-
-Cada documento debe tener:
-| Campo | Tipo | Ejemplo |
-|--------------|----------|---------|
-| nombre | string | "Cerradura doble paleta" |
-| precio | number | 15000 |
-| categoria | string | "cerraduras" |
-| stock | number | 8 |
-| imagen | string | URL de imagen |
-| descripcion | string | "Cerradura reforzada..." |
-
-### Colección: `ordenes`
-
-Se genera al finalizar la compra desde CheckoutForm.
-
-## Funcionalidades principales
-
-- Catálogo dinámico desde Firestore
-- Filtro por categorías
-- Vista de detalle
-- Carrito global con Context
-- Checkout con validación
-- Generación de orden y feedback del ID
-
-## Buenas prácticas aplicadas
-
-- Componentes presentacionales y contenedores separados
-- Context limpio sin UI
-- Fetch dentro de contenedores
-- Navegación SPA sin recargas
-- Manejo de errores y renderizado condicional
-- Código limpio sin debuggers
+ ├── components/
+ │    ├── Navbar/
+ │    ├── ItemListContainer/
+ │    ├── ItemDetail/
+ │    ├── Cart/
+ │    └── Checkout/
+ │
+ ├── context/
+ │    └── CartContext.jsx
+ │
+ ├── services/
+ │    └── firebase.js
+ │
+ ├── App.jsx
+ ├── App.css
+ ├── index.css
+ └── main.jsx
+```
 
 ---
 
-## Deploy
+## 🌐 Deploy en Vercel
 
-Se puede desplegar en:
+1. Crear repositorio en GitHub
 
-- Netlify
-- Vercel
+2. Subir el proyecto
+
+3. Ir a: [https://vercel.com](https://vercel.com)
+
+4. "Add New Project"
+
+5. Importar el repositorio
+
+6. Configuración:
+
+   - Framework: **Vite**
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+
+7. Se Agregan variables de entorno (Firebase) en **Project → Settings → Environment Variables**
+
+8. Deploy automático 🎉
 
 ---
 
-## Autor Marta A
+### ✔ Funcionalidad
 
-Proyecto Final – React JS
+- [ ] Productos cargan desde Firestore
+- [ ] Filtro por categoría funciona
+- [ ] Detalle de producto correcto
+- [ ] Agregar al carrito
+- [ ] Eliminar del carrito
+- [ ] Checkout genera orden
 
-# React + Vite
+### ✔ Código
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [ ] No hay errores en consola
+- [ ] Archivos CSS separados correctamente
+- [ ] Firebase configurado
 
-Currently, two official plugins are available:
+### ✔ Deploy
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [ ] `npm run build` funciona sin errores
+- [ ] Vercel levantó el proyecto
+- [ ] Variables de entorno cargadas
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 👩‍💻 Autora
 
-## Expanding the ESLint configuration
+**Marta A.** — Proyecto final React
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
