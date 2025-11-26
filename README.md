@@ -130,9 +130,7 @@ src/
    - Build Command: `npm run build`
    - Output Directory: `dist`
 
-7. Se Agregan variables de entorno (Firebase) en **Project → Settings → Environment Variables**
-
-8. Deploy automático 🎉
+7. Deploy automático 🎉
 
 ---
 
@@ -155,9 +153,6 @@ src/
 
 - [ ] `npm run build` funciona sin errores
 - [ ] Vercel levantó el proyecto
-- [ ] Variables de entorno cargadas
-
----
 
 ## 👩‍💻 Autora
 
