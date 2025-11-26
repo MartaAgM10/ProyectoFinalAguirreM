@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../services/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ItemList from "../components/ItemList/ItemList";
 
 function ItemListContainer() {
@@ -18,7 +19,7 @@ function ItemListContainer() {
         if (categoriaId) {
           productosRef = query(
             productosRef,
-            where("categoria", "==", categoriaId)
+            where("categorias", "==", categoriaId)
           );
         }
 
@@ -41,32 +42,16 @@ function ItemListContainer() {
   if (loading) return <p>Cargando productos...</p>;
   if (productos.length === 0) return <p>No hay productos para mostrar.</p>;
 
-  /*return (
-    <div className="productos">
-      {productos.map((p) => (
-        <div key={p.id} className="producto">
-          <h3>{p.nombre}</h3>
-          <p>{p.descripcion || "Sin descripción"}</p>
-          <p>Categoría: {p.categoría}</p>
-
-          <p>Precio: ${p.precio}</p>
-          <p>Stock: {p.existencias}</p>
-          {p.imagen && (
-            <img src={p.imagen} alt={p.nombre} style={{ width: "150px" }} />
-          )}
-        </div>
-      ))}
-    </div>
-  );
-}*/
   return (
     <div className="item-list">
       {productos.map((p) => (
         <div key={p.id} className="item-card">
           {p.imagen && <img src={p.imagen} alt={p.nombre} />}
           <h3>{p.nombre}</h3>
+          <p>Categoría: {p.categoria}</p>
           <p>{p.descripcion || "Sin descripción"}</p>
           <p>Precio: ${p.precio}</p>
+          <p>Stock: {p.existencias}</p>
 
           <Link to={`/detalle/${p.id}`} className="btn">
             Ver detalle
