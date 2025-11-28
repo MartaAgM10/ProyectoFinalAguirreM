@@ -1,9 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore, getDocs, collection } from "firebase/firestore";
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b02a3b914892dcc18972dd2ca907ccf52b927121
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_AUTH_DOMAIN,
@@ -17,3 +18,8 @@ export const FirebaseApp = initializeApp(firebaseConfig);
 
 //Exportar la instancia de firestore
 export const db = getFirestore(FirebaseApp);
+// consulta
+//export async function getProductos() {
+// const querySnapshot = await getDocs(collection(db, "productos"));
+//querySnapshot.forEach((doc) => console.log(`${doc.id} =>${doc.data}`));
+//}

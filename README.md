@@ -7,17 +7,17 @@ Permite navegar un catálogo, ver detalles, agregar al carrito, finalizar la com
 
 Este README describe el funcionamiento, instalación y despliegue del proyecto desarrollado con React + Firebase.
 
-## 🚀 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **React + Vite**
-- **React Router DOM**
-- **Firebase Firestore**
+- **React Router DOM** para la navegacion por ls rutas de la app
+- **Firebase Firestore** para base de datos
 - **Context API** para el carrito
 - **CSS modularizado** (index.css / App.css)
 
 ---
 
-## 📦 Instalación
+## Instalación
 
 1. Clonar el repositorio:
 
@@ -35,8 +35,13 @@ ProyectoFinalAguirreM 3. Instalar dependencias: npm install
 
 ## 🔥 Configuración de Firebase
 
+npm run dev
+
+## Configuración de Firebase
+
 src/services/firebase.js
 
+Agregar configuración:
 Agregar configuración:
 
 ```javascript
@@ -55,9 +60,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
----
-
-## 🛒 Funcionalidades del proyecto según la consigna
+## Funcionalidades del proyecto según la consigna
 
 - Listado de productos desde Firestore
 - Filtro por categoría
@@ -67,9 +70,9 @@ export const db = getFirestore(app);
 - Eliminación de productos
 - Checkout con generación de orden en Firestore
 
----
-
 ## 📁 Estructura del proyecto
+
+```
 
 ```
 
@@ -92,11 +95,27 @@ src/
 ├── index.css
 └── main.jsx
 
+├── components/
+│ ├── Navbar/
+│ ├── ItemListContainer/
+│ ├── ItemDetail/
+│ ├── Cart/
+│ └── Checkout/
+│
+├── context/
+│ └── CartContext.jsx
+│
+├── services/
+│ └── firebase.js
+│
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
+
 ```
 
----
-
-## 🌐 Deploy en Vercel
+## Deploy en Vercel
 
 1. Crear repositorio en GitHub
 
@@ -135,12 +154,7 @@ src/
 
 - [ ] `npm run build` funciona sin errores
 - [ ] Vercel levantó el proyecto
-- [ ] Variables de entorno cargadas
-
----
 
 ## 👩‍💻 Desarrollado por:
-**Marta A.** — Proyecto final React
 
----
-```
+**Marta A.** — Proyecto final React
