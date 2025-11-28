@@ -11,7 +11,9 @@ import "./index.css";
 import "./App.css";
 
 function App() {
+  console.log("TEST ID:", import.meta.env.VITE_PROJECT_ID);
   return (
+    
     <CartProvider>
       <BrowserRouter>
         <NavBar />
@@ -31,5 +33,6 @@ function App() {
     </CartProvider>
   );
 }
+
 
 export default App;
