@@ -27,34 +27,17 @@ git clone https://github.com/MartaAgM10/ProyectoFinalAguirreM.git
 
 2. Entrar al proyecto:
 
-```bash
 cd -repoMartaAgM10
-ProyectoFinalAguirreM
-```
-
-3. Instalar dependencias:
-
-```bash
-npm install
-```
+ProyectoFinalAguirreM 3. Instalar dependencias: npm install
 
 4. Iniciar el servidor de desarrollo:
-
-```bash
-npm run dev
-```
-
----
+   npm run dev---
 
 ## 🔥 Configuración de Firebase
 
-Crear un archivo en:
-
-```
 src/services/firebase.js
-```
 
-Agregar tu configuración:
+Agregar configuración:
 
 ```javascript
 import { initializeApp } from "firebase/app";
@@ -71,7 +54,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-```
 
 ---
 
@@ -90,24 +72,26 @@ export const db = getFirestore(app);
 ## 📁 Estructura del proyecto
 
 ```
+
 src/
- ├── components/
- │    ├── Navbar/
- │    ├── ItemListContainer/
- │    ├── ItemDetail/
- │    ├── Cart/
- │    └── Checkout/
- │
- ├── context/
- │    └── CartContext.jsx
- │
- ├── services/
- │    └── firebase.js
- │
- ├── App.jsx
- ├── App.css
- ├── index.css
- └── main.jsx
+├── components/
+│ ├── Navbar/
+│ ├── ItemListContainer/
+│ ├── ItemDetail/
+│ ├── Cart/
+│ └── Checkout/
+│
+├── context/
+│ └── CartContext.jsx
+│
+├── services/
+│ └── firebase.js
+│
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
+
 ```
 
 ---
@@ -130,11 +114,7 @@ src/
    - Build Command: `npm run build`
    - Output Directory: `dist`
 
-7. Se Agregan variables de entorno (Firebase) en **Project → Settings → Environment Variables**
-
-8. Deploy automático 🎉
-
----
+7. Deploy automático 🎉
 
 ### ✔ Funcionalidad
 
@@ -159,8 +139,8 @@ src/
 
 ---
 
-## 👩‍💻 Autora
-
+## 👩‍💻 Desarrollado por:
 **Marta A.** — Proyecto final React
 
 ---
+```
