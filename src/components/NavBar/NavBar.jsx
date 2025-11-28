@@ -1,18 +1,38 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa";
+//import "../../App.css";
 
 function NavBar() {
   const { totalItems } = useCart();
-
   return (
-    <nav>
-      <Link to="/">Inicio</Link>
-      <Link to="/categoria/cerrajeria">Cerrajería</Link>
-      <Link to="/categoria/candados">Candados</Link>
-      <Link to="/categoria/puertas">Puertas</Link>
+    <nav className="navbar">
+      <h1> Marta A. </h1>
 
-      <Link to="/cart" className="cart-widget">
+      <ul>
+        <li>
+          <Link className="navlink" to="/">
+            Inicio
+          </Link>
+        </li>
+        <li>
+          <Link className="navlink" to="/categoria/cerrajeria">
+            Cerrajería
+          </Link>
+        </li>
+        <li>
+          <Link className="navlink" to="/categoria/candados">
+            Candados
+          </Link>
+        </li>
+        <li>
+          <Link className="navlink" to="/categoria/puertas">
+            Puertas
+          </Link>
+        </li>
+      </ul>
+
+      <Link to="/cart" className="navlink cart-widget">
         <FaShoppingCart />
         <span>{totalItems}</span>
       </Link>

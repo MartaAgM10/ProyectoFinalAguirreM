@@ -4,25 +4,29 @@
   padding: 12px 40px;
   background: linear-gradient(to right, #28323f, #3e5069);
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   align-items: center;
+  margin-left: auto;
 }
 
 .navbar h1 {
   color: white;
   font-size: 24px;
-  letter-spacing: 1px;
+  letter-spacing: 3px;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 .navlink {
   color: #e8e8e8;
   text-decoration: none;
+
   font-size: 16px;
   transition: 0.3s;
 }

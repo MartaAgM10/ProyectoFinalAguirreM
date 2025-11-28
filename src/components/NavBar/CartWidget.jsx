@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 
 function CartWidget() {
-  const { totalQuantity } = useCart();
+  const { totalItems } = useCart();
 
   return (
     <Link to="/cart" className="cart-widget">
-      🛒 <span>{totalQuantity}</span>
+      🛒 <span>{totalItems}</span>
     </Link>
   );
 }

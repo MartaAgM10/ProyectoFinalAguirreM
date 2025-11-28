@@ -50,7 +50,7 @@ function ItemListContainer() {
           <h3>{p.nombre}</h3>
           <p>Categoría: {p.categoria}</p>
           <p>{p.descripcion || "Sin descripción"}</p>
-          <p>Precio: ${p.precio}</p>
+          <p>Precio: ${p.precio || "N/A"}</p>
           <p>Stock: {p.existencias}</p>
 
           <Link to={`/detalle/${p.id}`} className="btn">
