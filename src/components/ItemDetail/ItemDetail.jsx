@@ -15,7 +15,7 @@ function ItemDetail({ item }) {
     <div className="item-detail">
       <img src={item.img} alt={item.nombre} />
       <h2>{item.nombre}</h2>
-      <p>${item.price}</p>
+      <p>${item.precio}</p>
       {!added ? (
         <ItemCount stock={item.stock} initial={1} onAdd={handleAdd} />
       ) : (

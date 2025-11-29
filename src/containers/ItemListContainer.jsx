@@ -4,6 +4,14 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import ItemList from "../components/ItemList/ItemList";
 import { Link } from "react-router-dom";
+
+const normalizar = (str) =>
+  str
+    ?.normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -45,12 +53,12 @@ function ItemListContainer() {
     <div className="item-list">
       {productos.map((p) => (
         <div key={p.id} className="item-card">
-          {p.imagen && <img src={p.imagen} alt={p.nombre} />}
+          {p.img && <img src={p.img} alt={p.nombre} />}
           <h3>{p.nombre}</h3>
           <p>Categoría: {p.categoria}</p>
           <p>{p.descripcion || "Sin descripción"}</p>
           <p>Precio: ${p.precio || "N/A"}</p>
-          <p>Stock: {p.existencias}</p>
+          <p>Stock: {p.stock}</p>
 
           <Link to={`/detalle/${p.id}`} className="btn">
             Ver detalle
