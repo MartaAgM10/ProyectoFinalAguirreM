@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { db } from "../services/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import ItemList from "../components/ItemList/ItemList";
 import { Link } from "react-router-dom";
 function ItemListContainer() {
@@ -19,7 +18,7 @@ function ItemListContainer() {
         if (categoriaId) {
           productosRef = query(
             productosRef,
-            where("categorias", "==", categoriaId)
+            where("categoria", "==", categoriaId)
           );
         }
 
@@ -42,10 +41,6 @@ function ItemListContainer() {
   if (loading) return <p>Cargando productos...</p>;
   if (productos.length === 0) return <p>No hay productos para mostrar.</p>;
 
-<<<<<<< HEAD
-  
-=======
->>>>>>> b02a3b914892dcc18972dd2ca907ccf52b927121
   return (
     <div className="item-list">
       {productos.map((p) => (

@@ -1,10 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, getDocs, collection } from "firebase/firestore";
 
-<<<<<<< HEAD
-
-=======
->>>>>>> b02a3b914892dcc18972dd2ca907ccf52b927121
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_AUTH_DOMAIN,
